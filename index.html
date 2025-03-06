@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    span.s1 {font-kerning: none}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;賽馬抽獎程式&lt;/title&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>#race-track {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 800px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 400px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: 2px solid black;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: relative;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>overflow: hidden;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: linear-gradient(to bottom, #87CEEB 0%, #87CEEB 30%, #90EE90 30%, #90EE90 100%);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>#race-track::before {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>content: '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: absolute;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>top: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>left: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: repeating-linear-gradient(to bottom, transparent, transparent 60px, #fff 60px, #fff 70px);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.horse {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: absolute;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>transition: left 5s ease-in-out;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>top: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 60px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 60px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-align: center;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.horse::before {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>content: '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: absolute;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 40px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 30px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: #8B4513;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 20px 20px 0 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>left: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>top: 10px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.horse::after {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>content: '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: absolute;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background: #8B4513;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border-radius: 50%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>left: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>top: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>.horse span {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>position: absolute;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>bottom: 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: #fff;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>text-shadow: 1px 1px 2px black;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-weight: bold;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-size: 14px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>#input-area { margin: 20px 0; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>#result { margin-top: 20px; font-size: 24px; font-weight: bold; display: none; }</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="input-area"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;input type="text" id="name-input" placeholder="輸入名稱，用逗號分隔"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;button onclick="startRace()"&gt;開始抽獎&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="race-track"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="result"&gt;&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let horses = [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function startRace() {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('race-track').innerHTML = '';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('result').style.display = 'none';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>horses = [];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const input = document.getElementById('name-input').value;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const names = input.split(',').map(name =&gt; name.trim()).filter(name =&gt; name !== '');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>if (names.length &lt; 2) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>alert('請至少輸入兩個名稱！');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>return;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>names.forEach((name, index) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const horse = document.createElement('div');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>horse.className = 'horse';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>horse.style.top = `${index * 70 + 20}px`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>horse.style.left = '0px';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const nameSpan = document.createElement('span');</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>nameSpan.innerText = name;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>horse.appendChild(nameSpan);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>document.getElementById('race-track').appendChild(horse);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>horses.push(horse);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; { runRace(names); }, 100);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function runRace(names) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const winnerIndex = Math.floor(Math.random() * horses.length);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>horses.forEach((horse, index) =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const baseTime = 5000;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>let randomDelay = Math.random() * 2000;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>if (index === winnerIndex) {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>horse.style.left = '740px';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>horse.style.transition = `left ${baseTime}ms ease-in-out`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>} else {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>horse.style.left = `${600 + Math.random() * 100}px`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                    </span>horse.style.transition = `left ${baseTime + randomDelay}ms ease-in-out`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>setTimeout(() =&gt; {</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const winner = names[winnerIndex];</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>document.getElementById('result').innerText = `恭喜 ${winner} 獲勝！`;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>document.getElementById('result').style.display = 'block';</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}, 5500);</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+</body>
+</html>
